@@ -32,7 +32,6 @@ public class UserServiceImp implements UserService {
 
    @Override
    public void findUserByCar(Car car) {
-      userDao.findUserByCar(car);
+      String hql = "select u from User u where u.car = :car";
    }
-
 }

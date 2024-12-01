@@ -8,7 +8,8 @@ public class Car {
 
     @Id
     @GeneratedValue
-    private Long car_id;
+    @Column(name = "car_id")
+    private Long carId;
 
     @Column(name = "model")
     private String model;
@@ -16,16 +17,21 @@ public class Car {
     @Column(name = "series")
     private int series;
 
-    @OneToOne
-    @JoinColumn(name = "car_id", referencedColumnName = "id")
-    private User user;
-
-    public void setCar_id(Long carId) {
-        this.car_id = carId;
+    public Car(String model, int series) {
+        this.model = model;
+        this.series = series;
     }
 
-    public Long getCar_id() {
-        return car_id;
+    public Car() {
+
+    }
+
+    public Long getCarId() {
+        return carId;
+    }
+
+    public void setCarId(Long carId) {
+        this.carId = carId;
     }
 
     public String getModel() {
